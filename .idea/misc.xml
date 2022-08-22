@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/week1/FragPage/pom.xml" />
+        <option value="$PROJECT_DIR$/week1/springweb/pom.xml" />
+        <option value="$PROJECT_DIR$/week1/hellospring/pom.xml" />
+        <option value="$PROJECT_DIR$/week1/springbasic/pom.xml" />
+        <option value="$PROJECT_DIR$/week1/springboard/pom.xml" />
+        <option value="$PROJECT_DIR$/week1/controllerBasic/pom.xml" />
+        <option value="$PROJECT_DIR$/week2/springform/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

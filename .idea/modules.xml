@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/week1/FragPage/FragPage.iml" filepath="$PROJECT_DIR$/week1/FragPage/FragPage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Spring.iml" filepath="$PROJECT_DIR$/.idea/Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week1/controllerBasic/day3.iml" filepath="$PROJECT_DIR$/week1/controllerBasic/day3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week1/hellospring/hellospring.iml" filepath="$PROJECT_DIR$/week1/hellospring/hellospring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week1/springbasic/springbasic.iml" filepath="$PROJECT_DIR$/week1/springbasic/springbasic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week1/springboard/springboard.iml" filepath="$PROJECT_DIR$/week1/springboard/springboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week2/springform/springform.iml" filepath="$PROJECT_DIR$/week2/springform/springform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week1/springweb/springweb.iml" filepath="$PROJECT_DIR$/week1/springweb/springweb.iml" />
+    </modules>
+  </component>
+</project>

@@ -28,8 +28,9 @@ public class BoardController {
 
     @GetMapping("/read/{boardIdx}")
     public String openBoardDetail(@PathVariable("boardIdx") int boardIdx, Model model) {
-        BoardEntity board = boardService.read(boardIdx);
-        model.addAttribute("board", board);
+//        BoardEntity board = boardService.read(boardIdx);
+//        model.addAttribute("board", board);
+        return "";
     }
 
 
