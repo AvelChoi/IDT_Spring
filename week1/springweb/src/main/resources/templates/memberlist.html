@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <th>ID</th><th>이름</th><th>나이</th><th>성별</th><th>기능</th>
+        </thead>
+
+        <tbody>
+            <tr th:each="member: ${members}">
+                <td th:text="${member.userId}"></td>
+                <td th:text="${member.name}"></td>
+                <td th:text="${member.age}"></td>
+                <td th:if="${member.gender}">
+                    <img src="img/male.png" width="30">
+                </td>
+                <td th:unless="${member.gender}">
+                    <img src="img/female.png" width="30">
+                </td>
+                <td>
+                    <a th:href="|/memberread?userId=${member.userId}|"> 읽기 </a>
+                    <a th:href="|/memberdelete?userId=${member.userId}|"> 삭제 </a>
+                </td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

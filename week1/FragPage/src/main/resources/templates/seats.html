@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>좌석 현황</h3>
+
+<th:block th:each="seat, s : ${seatStatus}">
+    <br th:if="${s.index >= 5 and s.index % 5 == 0}">
+    [[ ${s.index+1} ]]: <th:block th:text="${seat ? '[X]' : '[]'}"></th:block>
+</th:block>
+
+</body>
+</html>

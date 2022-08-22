@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <span th:each="banner : ${banners}">
+        <a th:href="${banner.href}" target="_blank">
+            <img th:src="@{/img/} + ${banner.imgSrc}" width="100">
+        </a>
+    </span>
+
+</body>
+</html>

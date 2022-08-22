@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Basic</title>
+</head>
+<body>
+<h3>문자열 출력</h3>
+
+[[${name}]]
+
+<p th:text="${name}"></p>
+
+<span>[[${name}]]</span>
+[[${name}]]
+<br>
+
+<th:block th:text="${name}"></th:block>
+
+<!-- 만약 HTML을 자바쪽에서 작성해서 받고 싶다면 utext를 이용하면 된다.-->
+<p th:utext="${html}">
+
+<h3>image</h3>
+<img th:src="${image}" width="32">
+<img th:src="'/img/' + ${image}" width="32">
+<img th:src="|/img/${image}|" width="32">
+
+<h3>href</h3>
+<a th:href="${'/read?id=' + id}">go1</a> <br>
+<a th:href="|read?id=${id}|">go2</a> <br>
+<!-- 골뱅이를 통해 밑에 있는 경로를 찾아갈 수 있다 -->
+<a th:href="@{read?id=7}">go3</a> <br>
+
+<a th:href="@{read(id=${id}, action='show_all')}">go4</a> <br>
+
+<h3>Object Value</h3>
+title = <p th:text="${book.title}"></p><br>
+<!--아래 같이 하면 인라인으로 출력됨-->
+title = <th:block th:text="${book.title}"></th:block>
+author = [[${book.author}]]
+
+<hr>
+<h3>비교연산자</h3>
+<div th:text="${book.author != 'kim'}"></div>
+<div th:text="${book.price >= 30}"></div>
+<div th:text="${book.author == 'kim' ? 'ok': 'no'}" ></div>
+
+<h3>what if?</h3>
+<!--조건문으로, age가 5보다 클 경우 아래 메시지가 보이게 된다.-->
+<p th:if="${age>5}"> age가 5보다 크다 </p>
+<p th:unless="${age > 5}"> age는 5보다 작다 </p>
+<p th:if="${!(age>5)}"> age가 5보다 작다 </p>
+<p th:if="${age <= 5}"> age가 5보다 작다 </p>
+
+<hr>
+<h3>Switch</h3>
+<th:block th:switch="${#strings.substring(name, 0, 1)}">
+    <div th:case="김"> 당신은 김씨입니다. </div>
+    <div th:case="이"> 당신은 이씨입니다. </div>
+    <div th:case="박"> 당신은 박씨입니다. </div>
+</th:block>
+
+<br>
+<hr>
+<h3>반복</h3>
+<th:block th:each="data:${datas}">
+    <p th:text="${data}"></p>
+</th:block>
+
+<th:block th:each="data, status:${datas}">
+    <p th:text="|${status.index} / ${status.size} ${data}|"></p>
+</th:block>
+
+<h3>반복 tr</h3>
+<table border="1">
+    <tr th:each="data:${datas}">
+        <td th:text="${data}"></td>
+    </tr>
+</table>
+
+<h3>book list</h3>
+<table border="1">
+    <tr th:each="book: ${books}">
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.author}"></td>
+        <td th:text="${book.price}"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>

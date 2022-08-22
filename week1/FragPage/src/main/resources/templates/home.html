@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div th:replace="~{header :: header}"></div>
+    <style>
+        a {text-decoration: none;}
+        
+    </style>
+</head>
+<body>
+    <p th:replace="~{header :: header}"></p>
+    <h1 align="center">ASIANA IDT</h1>
+
+    <div id="intro" align="center" style="width: 100%; height: 500px;">
+        환영합니다
+    </div>
+
+    <div th:insert="~{footer :: footer}"></div>
+</body>
+</html>

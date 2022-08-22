@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Valid3</title>
+</head>
+<body>
+    <form>
+        <div> <!-- id, name, value -->
+<!-- 이렇게 객체로 받았을 때만 th:field를 사용할 수 있다. 그렇지 않을 경우 이전처럼 $표시 사용-->
+            <input type="text" th:field="*{member.name}" />
+            <span th:errors="*{member.name}" class="error"></span>
+        </div>
+        <div>
+
+            <input type="text" th:field="*{member.age}" />
+            <span th:errors="*{member.age}" class="error"></span>
+        </div>
+        <div> <!-- id, name, value -->
+            <input type="text" th:field="*{member.email}" />
+            <span th:errors="*{member.email}" class="error"></span>
+        </div>
+
+        <button type="submit">OK</button>
+
+    </form>
+</body>
+</html>

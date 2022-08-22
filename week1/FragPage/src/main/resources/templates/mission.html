@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h3>성별 출력하기</h3>
+    <th:block th:each="gender : ${genders}">
+        <img th:src="|img/${gender ? 'male.png' : 'female.png'}|" width="30">
+    </th:block>
+
+</body>
+</html>

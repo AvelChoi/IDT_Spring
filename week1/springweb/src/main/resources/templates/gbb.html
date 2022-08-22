@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>가위 바위 보</title>
+</head>
+<body>
+<h1>가위 바위 보</h1>
+<table th:if="${my}" border="1">
+    <tr>
+        <td>my</td>
+        <td>com</td>
+        <td>result</td>
+    </tr>
+
+    <tr>
+        <td><img th:src="${my}" width="100"></td>
+        <td><img th:src="${com}" width="100"></td>
+        <td><img th:src="${result}" width="100"></td>
+    </tr>
+</table>
+
+<table border="1">
+    <tr>
+        <th>
+            <a href="/gbb?my=0">[가위]</a>
+        </th>
+        <th>
+            <a href="/gbb?my=1">[바위]</a>
+        </th>
+        <th>
+            <a href="/gbb?my=2">[보]</a>
+        </th>
+    </tr>
+</table>
+
+</body>
+</html>

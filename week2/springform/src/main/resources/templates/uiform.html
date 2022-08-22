@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Title</h2>
+<input type="text" name="title" id="title" th:value="${title}"><br>
+
+<!--라디오 버튼-->
+<h3>Exercise</h3>
+<input type="radio" name="exercise" id="football" value="football" th:checked="${exercise.equals('football')}">
+<label for="football"> 축구 </label>
+<input type="radio" name="exercise" id="basketball" value="basketball"
+       th:checked="${exercise.equals('basketball')}">
+<label for="basketball"> 농구 </label>
+<input type="radio" name="exercise" id="baseball" value="baseball" th:checked="${exercise.equals('baseball')}">
+<label for="baseball"> 야구 </label>
+
+<h3>Vehicles</h3>
+<input type="checkbox" name="vehicles" id="vehicle4" value="Bike">
+<label for="vehicle4">I have a bike</label><br>
+<input type="checkbox" name="vehicles" id="vehicle5" value="Car">
+<label for="vehicle5">I have a car</label><br>
+
+<h3>Fruits</h3>
+<select name="fruits">
+    <option value="apple">사과</option>
+    <option value="peer">배</option>
+    <option value="banana">바나나</option>
+</select>
+
+<br>
+<h3>Text area</h3>
+<label for="review">Review Memo</label>
+<textarea id="review" name="review" rows="4" cols="50">review...</textarea>
+
+
+
+</body>
+</html>

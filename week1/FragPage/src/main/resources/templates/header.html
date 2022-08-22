@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a {text-decoration-line: none;}
+        a:active {color: black;}
+    </style>
+</head>
+<body>
+<!--header-->
+<div th:fragment="header">
+    <a href="/"> [Home] </a> <a href="board"> [Board] </a> <a href="files"> [Files] </a>
+    <a href="qna"> [Q&A]</a>
+</div>
+
+</body>
+</html>

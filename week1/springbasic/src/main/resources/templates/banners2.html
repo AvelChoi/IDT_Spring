@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+        <tr>
+            <td>이름</td> <td>나이</td> <td>성별</td>
+        </tr>
+    </thead>
+
+    <tbody th:each="banner2 : ${banners2}">
+        <tr>
+            <!-- 아래 둘 다 결과는 같음 -->
+            <td th:text="${banner2.name}"> </td>
+            <td> [[${banner2.age}]] </td>
+            <td th:switch="${banner2.gender}">
+                <span th:case="true"> <img src="/img/female.png" height="50"> </span>
+                <span th:case="false"> <img src="/img/male.png" height="50"> </span>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+
+</body>
+</html>
