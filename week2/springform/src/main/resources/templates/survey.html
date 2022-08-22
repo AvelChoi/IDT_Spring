@@ -2,69 +2,33 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Trip Survey</title>
+    <title>Title</title>
 </head>
 <body>
-<form action="/surveyresult">
-    <h2>질문1: 여행에 대한 만족드는? (1)</h2>
-    <input type="radio" name="trip1" id="trip1vus">
-    <label for="trip1vus">매우 불만족</label>
-    <input type="radio" name="trip1" id="trip1us">
-    <label for="trip1us">불만족</label>
-    <input type="radio" name="trip1" id="trip1ok">
-    <label for="trip1ok">대체로 만족</label>
-    <input type="radio" name="trip1" id="trip1s">
-    <label for="trip1s">만족</label>
-    <input type="radio" name="trip1" id="trip1vs">
-    <label for="trip1vs">매우 만족</label>
+<!--submit 버튼을 누르면 commit으로 데이터를 넘겨준다-->
+<form action="/commit">
 
-    <h2>질문2: 여행에 대한 만족도는? (2)</h2>
-    <input type="radio" name="trip1" id="trip2vus">
-    <label for="trip2vus">매우 불만족</label>
-    <input type="radio" name="trip1" id="trip2us">
-    <label for="trip2us">불만족</label>
-    <input type="radio" name="trip1" id="trip2ok">
-    <label for="trip2ok">대체로 만족</label>
-    <input type="radio" name="trip1" id="trip2s">
-    <label for="trip2s">만족</label>
-    <input type="radio" name="trip1" id="trip2vs">
-    <label for="trip2vs">매우 만족</label>
+    <div th:each=" survey, s : ${surveys}">
 
-    <h2>질문3: 여행에 대한 만족도는? (3)</h2>
-    <input type="radio" name="trip1" id="trip3vus">
-    <label for="trip3vus">매우 불만족</label>
-    <input type="radio" name="trip1" id="trip3us">
-    <label for="trip3us">불만족</label>
-    <input type="radio" name="trip1" id="trip3ok">
-    <label for="trip3ok">대체로 만족</label>
-    <input type="radio" name="trip1" id="trip3s">
-    <label for="trip3s">만족</label>
-    <input type="radio" name="trip1" id="trip3vs">
-    <label for="trip3vs">매우 만족</label>
+        <h2> 질문[[${s.index+1}]]:[[${survey.title}]] </h2>
 
-    <h2>질문4: 기타 하고 싶은 말은?</h2>
-    <input type="text" name="" id="suggestion" value="없음">
+        <div th:switch="${survey.type}">
+        <span th:case="0">
+            <input type="radio" th:name="|ans${s.index+1}|" value="1"> 매우 불만족
+            <input type="radio" th:name="|ans${s.index+1}|" value="2"> 불만
+            <input type="radio" th:name="|ans${s.index+1}|" value="3"> 대체로 만족
+            <input type="radio" th:name="|ans${s.index+1}|" value="4"> 만족
+            <input type="radio" th:name="|ans${s.index+1}|" value="5"> 매우 만족
 
-    <h2>잘문5: 가장 친절한 직원은?</h2>
-    <input type="text" name="" id="kindest">
-
-    <h2>질문6: 여행에 대한 만족도는? (6)</h2>
-    <input type="radio" name="trip6" id="trip6vus">
-    <label for="trip6vus">매우 불만족</label>
-    <input type="radio" name="trip6" id="trip6us">
-    <label for="trip6us">불만족</label>
-    <input type="radio" name="trip6" id="trip6ok">
-    <label for="trip6ok">대체로 만족</label>
-    <input type="radio" name="trip6" id="trip6s">
-    <label for="trip6s">만족</label>
-    <input type="radio" name="trip6" id="trip6vs">
-    <label for="trip6vs">매우 만족</label>
-
-    <h2>질문7: 응원의 말은?</h2>
-    <input type="text" name="" id="">
-    <br><br>
-
-    <button type="submit">제출</button>
+            <!-- radio button-->
+        </span>
+            <span th:case="1">
+            <!--text -->
+            <input type="text" th:name="|ans${s.index+1}|">
+        </span>
+        </div>
+    </div>
+    <input type="submit" value="제출">
 
 </form>
 
