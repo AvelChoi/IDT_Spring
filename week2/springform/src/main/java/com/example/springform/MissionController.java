@@ -25,7 +25,11 @@ public class MissionController {
 
         }
 
-
         return "seats";
+    }
+
+    @RequestMapping("/survey")
+    public String survey(Model model) {
+        return "survey";
     }
 }
