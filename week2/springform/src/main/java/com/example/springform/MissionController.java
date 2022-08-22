@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 @Controller
@@ -30,6 +31,14 @@ public class MissionController {
 
     @RequestMapping("/survey")
     public String survey(Model model) {
+        ArrayList<Survey> surveys = new ArrayList<>();
+
         return "survey";
+    }
+
+    @RequestMapping("/surveyresult")
+    public String surveyreuslt(Model model) {
+
+        return "surveyresult";
     }
 }
