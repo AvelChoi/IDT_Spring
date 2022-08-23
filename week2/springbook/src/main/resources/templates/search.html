@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+============================ <br>
+<h2>교보문고</h2>
+============================ <br>
+<form action="">
+    <input type="text" th:value="${keyword}" name="keyword">
+    <button type="submit">검색</button>
+</form>
+
+<div th:if="${result}">
+
+</div>
+
+</body>
+</html>

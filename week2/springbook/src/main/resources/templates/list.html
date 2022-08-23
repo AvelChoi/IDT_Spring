@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+============================ <br>
+<div class="red"> 교보문고</div>
+============================ <br>
+
+<div th:unless="${userId}">
+    <a href="loginform">로그인</a>
+</div>
+
+<div th:th:if="${userId}">
+    [user]: [[${userId}]] &nbsp; <a href="/logout">로그아웃</a>
+</div>
+
+
+<table>
+    <tr>
+        <td th:each="book : ${it}">
+            <table>
+                <tr>
+                    <td><a th:href="${book.url}"> <img th:src="|img/${book.image}|" height="150" alt=""> </a></td>
+                </tr>
+                <tr>
+                    <td><a th:href="|read?bookId=${book.bookId}|">[[${book.title}]]</a></td>
+                </tr>
+                <tr>
+                    <td th:text="{numbers.formatCurrency(book.price)}"></td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

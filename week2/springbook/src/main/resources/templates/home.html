@@ -3,14 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>  </style>
+    <style></style>
 </head>
 <body>
 ============================ <br>
-<div class="red"> 교보문고 </div>
+<div class="red"> 교보문고</div>
 ============================ <br>
-<a href="loginfrom">로그인</a>
-<a href="logout">로그아웃</a>
+
+<div th:unless="${userId}">
+    <a href="loginform">로그인</a>
+</div>
+
+<div th:if="${userId}">
+    [user]: [[${userId}]] &nbsp; <a href="/logout">로그아웃</a>
+</div>
+
+<!--검색 form 작성-->
+<form action="">
+    <input type="text" name="keyword">
+    <input type="submit" value="검색">
+</form>
 
 </body>
 </html>

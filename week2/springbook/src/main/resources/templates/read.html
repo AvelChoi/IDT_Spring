@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+============================ <br>
+<h2>교보문고</h2>
+============================ <br>
+<h2>책 정보</h2>
+
+<table>
+    <tr>
+        <td colspan="2"><img src="|img/${book.image}|" width="200"></td>
+    </tr>
+    <tr>
+        <td>제목</td> <td>[[${book.title}]]</td>
+    </tr>
+    <tr>
+        <td>분야</td> <td>[[${book.category}]]</td>
+    </tr>
+    <tr>
+        <td>저자</td> <td>[[${book.author}]]</td>
+    </tr>
+    <tr>
+        <td>가격</td> <td>[[${book.price}]]</td>
+    </tr>
+</table>
+
+<!--댓글 보여주기-->
+<ul th:each="comment : ${comments}">
+    <li>[[${comment}]]</li>
+</ul>
+
+<!--댓글 작성-->
+<form action="comment">
+    <label for="comment">댓글</label>
+    <input type="text" id="comment" name="comment">
+
+    <input type="submit" value="submit">
+</form>
+
+<form action="/cart">
+    <label for="qty">주문수량:</label>
+    <input type="number" name="qty" min="1" max="20" id="qty">
+    <input type="submit" value="submit">
+</form>
+
+
+
+
+
+</body>
+</html>
