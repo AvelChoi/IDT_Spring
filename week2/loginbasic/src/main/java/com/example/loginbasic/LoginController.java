@@ -75,4 +75,34 @@ public class LoginController {
 
     }
 
+    @RequestMapping("/admin1")
+    @ResponseBody
+    public String admin1(HttpServletRequest request) {
+
+        if (request.getSession().getAttribute("userId") == null) {
+            return "<script> location.href='/loginform'; </script>";
+        }
+
+        if (request.getSession().getAttribute("userId").equals("admin")) {
+            return "<script> alert('관리자로 로그인 했습니다') location.href='/loginform'; </script>";
+        }
+
+        return "Admin Page1";
+    }
+
+    @RequestMapping("/admin2")
+    @ResponseBody
+    public String admin2(HttpServletRequest request) {
+
+        if (request.getSession().getAttribute("userId") == null) {
+            return "<script> location.href='/loginform'; </script>";
+        }
+
+        if (request.getSession().getAttribute("userId").equals("admin")) {
+            return "<script> alert('관리자로 로그인 했습니다') location.href='/loginform'; </script>";
+        }
+
+        return "Admin Page2";
+    }
+
 }
