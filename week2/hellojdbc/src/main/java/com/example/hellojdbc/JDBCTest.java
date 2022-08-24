@@ -23,7 +23,21 @@ public class JDBCTest {
                         ");"
         );
 
+        System.out.println("INSERT");
+        stmt.execute("INSERT INTO STUDENT VALUES(1, 'AAA', 'COM')");
+
         ResultSet rs = stmt.executeQuery("SELECT * FROM STUDENT");
+
+        while (rs.next()) {
+            String id = rs.getString("ID");
+            String name = rs.getString("NAME");
+            String dept = rs.getString("DEPT");
+
+            System.out.println(id + name + dept);
+        }
+
+        System.out.println("조건 SELECT");
+        rs = stmt.executeQuery("SELECT NAME, ID, DEPT FROM STUDENT WHERE ID='1'");
 
         while (rs.next()) {
             String id = rs.getString("ID");

@@ -7,14 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class BoardServiceImpl implements BoardService{
+public class BoardServiceImpl implements BoardService {
 
-    ArrayList<BoardEntity> boardEntities = new ArrayList<>() {{
+    ArrayList<BoardEntity> boardEntities = new ArrayList<>() {
+        {
         add(new BoardEntity(1, "제목1", "내용1"));
         add(new BoardEntity(2, "제목2", "내용2"));
         add(new BoardEntity(3, "제목3", "내용3"));
         add(new BoardEntity(4, "제목4", "내용4"));
-    }};
+        }
+    };
 
     @Override
     public List<BoardEntity> selectAll() throws Exception {
@@ -25,7 +27,7 @@ public class BoardServiceImpl implements BoardService{
     @Override
     public BoardEntity selectOne(int boardIdx) throws Exception {
 
-        return boardEntities.stream().filter(b -> b.getBoardIdx() == boardIdx ).findAny().get();
+        return boardEntities.stream().filter(b -> b.getBoardIdx() == boardIdx).findAny().get();
 
     }
 
@@ -48,15 +50,16 @@ public class BoardServiceImpl implements BoardService{
         BoardEntity find = selectOne(boardIdx);
         boardEntities.remove(find);
     }
-/*
- private int boardIdx;
-    private String title;
-    private String contents;
-    private int hitCnt = 0;
-    private String creatorId;		//작성자
-    private LocalDateTime createdDatetime = LocalDateTime.now();
-    private LocalDateTime updatedDatetime;
-* */
+
+    /*
+     private int boardIdx;
+        private String title;
+        private String contents;
+        private int hitCnt = 0;
+        private String creatorId;		//작성자
+        private LocalDateTime createdDatetime = LocalDateTime.now();
+        private LocalDateTime updatedDatetime;
+    * */
     @Override
     public void update(BoardEntity board) throws Exception {
 
